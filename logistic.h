@@ -1,13 +1,25 @@
 #pragma once
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-class Pedro{
+class PedroClass {
     int hp = 3;
+    int max_hp = hp;
     int armor = 0;
-
+    string death_message;
+public:
+    void hp_minus(int amount);
+    void heal(int amount);
+    int get_hp(); 
+    void quest_changes(int act, int ans); 
 };
 
-void Main_menu();
-void hp_minus(Pedro hp);
+class GameInfo {
+public:
+    bool is_game_over = false;
+    PedroClass Pedro;
+};
+
+
