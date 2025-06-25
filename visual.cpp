@@ -9,6 +9,8 @@ void names(){
 }
 
 void selection(string c, string a, string b){
+system("cls");
+cout << "Глава I\n";
 cout << c << endl;
 cout << "1. " << a << endl;
 cout << "2. " << b << endl;

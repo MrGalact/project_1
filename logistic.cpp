@@ -15,19 +15,27 @@ void PedroClass::heal(int amount) {
     }
 }
 
-void PedroClass::quest_changes(int act, int ans) {
+bool GameInfo::quest_changes(int act, int ans) {
     if (act == 0 && ans == 1) {
-        hp_minus(3);
-        death_message = "Вас избил злой человек. Вы проиграли.";
+        Pedro.hp_minus(3);
+        system_message = "Вас избил злой человек. Вы умерли.";
+        return is_game_over = true;
     }
     if (act == 1 && ans == 2) {
-        hp_minus(3);
-        death_message = "Вам на голову упал желудь. Вы проиграли.";
+        Pedro.hp_minus(3);
+        system_message = "Вам на голову упал желудь. Вы умерли.";
+        return is_game_over = true;
     }
-    if (act == 3 && ans == 2) {
-        hp_minus(3);
-        death_message = "Из-за тяжести кошелька с монетами с вас спали штаны на рынке. Вы умерли со стыда.";
+    if (act == 2 && ans == 2) {
+        Pedro.hp_minus(3);
+        system_message = "Из-за тяжести кошелька с монетами с вас спали штаны на рынке. Вы умерли со стыда.";
+        return is_game_over = true;
     }
+    if (act == 2 && ans == 1) {
+        system_message = "Вы прошли игру, Вернув человеку его кошелек, +реп +одна золотая моента от человека +вайб +совесть";
+        return is_game_over = true;
+    }
+    return is_game_over = false;
 }
 
 

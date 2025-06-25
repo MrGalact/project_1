@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 using namespace std;
 
 
@@ -20,7 +21,7 @@ static string quest[3] = {
 static string get_otvet_a[6] = {
     "Ударить", 
     "Подобрать", 
-    "вернуть"
+    "Вернуть"
 };
 static string get_otvet_b[6] = {
     "Урегулировать конфликт",
